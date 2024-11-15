@@ -1,8 +1,8 @@
 {
     "scripts": {
-      "install": "cd client && npm install && cd ../server && npm install",
-      "build": "cd client && npm run build",
-      "start": "cd server && npm start"
+      "install": "cd Frontend && npm install && cd ../Backend && npm install",
+      "build": "cd Frontend && npm run build",
+      "start": "cd Backend && npm start"
 
     }
 
