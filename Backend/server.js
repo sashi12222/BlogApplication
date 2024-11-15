@@ -23,7 +23,13 @@ app.use("/",IndexRoute)
 app.use(customErrorHandler)
 
 const PORT = process.env.PORT || 5000 ;
+// Serve static files from the React frontend build directory
+app.use(express.static(path.join(__dirname, '../Frontend/build')));
 
+// Catch-all handler to serve React's index.html for non-API routes
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../Frontend/build', 'index.html'));
+});
 app.use(express.static(path.join(__dirname , "public") ))
 
 const server = app.listen(PORT,()=>{
